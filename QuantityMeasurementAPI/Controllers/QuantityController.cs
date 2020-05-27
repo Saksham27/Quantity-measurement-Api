@@ -1,4 +1,9 @@
-﻿using System;
+﻿/// ================================================
+/// File    : QuantityController.cs
+/// Author  : Saksham Singh
+/// Company : Bridgelabz Solution LLP
+/// ================================================
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,6 +25,12 @@ namespace QuantityMeasurementAPI.Controllers
             this.quantityMeasurementBL = quantityMeasurementBL;
         }
 
+        /// <summary>
+        /// Post Method for inputting the value with option and performing conversion
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        #region Conversion
         [Route("conversion")]
         [HttpPost]
         public IActionResult Conversion([FromBody]ConversionModel quantity)
@@ -41,7 +52,13 @@ namespace QuantityMeasurementAPI.Controllers
                 return BadRequest(new { Success=false , message=exception.Message });
             }
         }
+        #endregion
 
+        /// <summary>
+        /// Get Method for getting list of all the performed conversions
+        /// </summary>
+        /// <returns></returns>
+        #region GetAllConversions
         [Route("conversion")]
         [HttpGet]
         public IActionResult GetAllConversions()
@@ -63,7 +80,14 @@ namespace QuantityMeasurementAPI.Controllers
                 return BadRequest(new { Success=false, message=exception.Message});
             }
         }
+        #endregion
 
+        /// <summary>
+        /// Get method for getting specific conversion given it's id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        #region GetConversionbyId
         [Route("conversion/{id}")]
         [HttpGet("conversion/{id}")]
         public IActionResult GetConversionbyId([FromRoute]int id)
@@ -85,10 +109,17 @@ namespace QuantityMeasurementAPI.Controllers
                 return BadRequest(new { Success = false, message = exception.Message });
             }
         }
+        #endregion
 
+        /// <summary>
+        /// Delete method for deleting a specific conversion given it's id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        #region GetConversionbyId
         [Route("conversion/{id}")]
         [HttpDelete("conversion/{id}")]
-        public IActionResult DeleteConversionById([FromRoute]int id)
+        public IActionResult C([FromRoute]int id)
         {
             try
             {
@@ -107,7 +138,14 @@ namespace QuantityMeasurementAPI.Controllers
                 return BadRequest(new { Success = false, message = exception.Message });
             }
         }
+        #endregion
 
+        /// <summary>
+        /// Post Method for inputting the value with option and performing comparison
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        #region Comparison
         [Route("comparison")]
         [HttpPost]
         public IActionResult Comparison([FromBody]ComparisonModel quantity)
@@ -129,7 +167,13 @@ namespace QuantityMeasurementAPI.Controllers
                 return BadRequest(new { Success = false, message = exception.Message });
             }
         }
+        #endregion
 
+        /// <summary>
+        /// Get Method for getting list of all the performed comparison
+        /// </summary>
+        /// <returns></returns>
+        #region GetAllComparisons
         [Route("comparison")]
         [HttpGet]
         public IActionResult GetAllComparisons()
@@ -151,7 +195,14 @@ namespace QuantityMeasurementAPI.Controllers
                 return BadRequest(new { Success = false, message = exception.Message });
             }
         }
+        #endregion
 
+        /// <summary>
+        /// Get method for getting specific comparison given it's id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        #region GetComparisonbyId
         [Route("comparison/{id}")]
         [HttpGet("comparison/{id}")]
         public IActionResult GetComparisonbyId([FromRoute]int id)
@@ -173,7 +224,14 @@ namespace QuantityMeasurementAPI.Controllers
                 return BadRequest(new { Success = false, message = exception.Message });
             }
         }
+        #endregion
 
+        /// <summary>
+        /// Delete method for deleting a specific comparison given it's id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        #region DeleteCompariosnById
         [Route("comparison/{id}")]
         [HttpDelete("comparison/{id}")]
         public IActionResult DeleteCompariosnById([FromRoute]int id)
@@ -195,5 +253,6 @@ namespace QuantityMeasurementAPI.Controllers
                 return BadRequest(new { Success = false, message = exception.Message });
             }
         }
+        #endregion
     }
 }

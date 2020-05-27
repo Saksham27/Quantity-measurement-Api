@@ -1,9 +1,18 @@
-﻿using System;
+﻿/// ================================================
+/// File    : Response.cs
+/// Author  : Saksham Singh
+/// Company : Bridgelabz Solution LLP
+/// ================================================
 using System.Collections.Generic;
-using System.Text;
 
+#region CommonLayer.Model
 namespace CommonLayer.Model
 {
+    /// <summary>
+    /// Poco class for responses of requests
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    #region Response
     public class Response<T>
     {
         public Response()
@@ -18,4 +27,6 @@ namespace CommonLayer.Model
 
         public List<T> Data { get; set; }
     }
+    #endregion
 }
+#endregion

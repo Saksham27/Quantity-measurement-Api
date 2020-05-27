@@ -25,7 +25,7 @@ namespace QuantityMeasurementAPI.Test.Controller
         public void Get_WhenCalled_ReturnsOkResult()
         {
             //Act
-            var okResult = controller.GetComparisonbyId(2);
+            var okResult = controller.GetAllConversions();
 
             //Assert
             Assert.IsType<OkObjectResult>(okResult);

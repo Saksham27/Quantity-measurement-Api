@@ -1,13 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/// ================================================
+/// File    : ComparisonModel.cs
+/// Author  : Saksham Singh
+/// Company : Bridgelabz Solution LLP
+/// ================================================
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+#region CommonLayer.Model
 namespace CommonLayer.Model
 {
+    #region ComparisonModel
     public class ComparisonModel
     {
+        /// <summary>
+        /// constructor
+        /// </summary>
+        #region ComparisonModel
         public ComparisonModel()
         {
             ValueOne = 0;
@@ -16,6 +24,7 @@ namespace CommonLayer.Model
             ValueTwoUnit = null;
             Result = null;
         }
+        #endregion
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -41,4 +50,6 @@ namespace CommonLayer.Model
 
         public string Result { get; set; }
     }
+    #endregion
 }
+#endregion

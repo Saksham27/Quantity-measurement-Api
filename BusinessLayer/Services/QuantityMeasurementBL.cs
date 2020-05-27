@@ -1,17 +1,30 @@
-﻿using BusinessLayer.Interface;
+﻿/// ================================================
+/// File    : QuantityMeasurementBL.cs
+/// Author  : Saksham Singh
+/// Company : Bridgelabz Solution LLP
+/// ================================================
+using BusinessLayer.Interface;
 using CommonLayer.Model;
 using RepositoryLayer.Interface;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace BusinessLayer.Services
 {
+    /// <summary>
+    /// service Class for business logic implementation 
+    /// </summary>
     public class QuantityMeasurementBL : IQuantityMeasurementBL
     {
+        /// <summary>
+        /// instance of repo layer service
+        /// </summary>
         private IQuantityMeasurementRL quantityMeasurementRL;
 
+        /// <summary>
+        /// construcotr
+        /// </summary>
+        /// <param name="quantityMeasurementRL"></param>
         public QuantityMeasurementBL(IQuantityMeasurementRL quantityMeasurementRL)
         {
             this.quantityMeasurementRL = quantityMeasurementRL;
@@ -22,6 +35,7 @@ namespace BusinessLayer.Services
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
+        #region Conversion
         public Response<ConversionModel> Conversion(ConversionModel quantity)
         {
             try
@@ -46,11 +60,13 @@ namespace BusinessLayer.Services
                 throw new Exception(exception.Message);
             }
         }
+        #endregion
 
         /// <summary>
         /// Business layer login for GetAllConversions Method
         /// </summary>
         /// <returns></returns>
+        #region GetAllConverisons
         public Response<ConversionModel> GetAllConverisons()
         {
             try
@@ -75,12 +91,14 @@ namespace BusinessLayer.Services
                 throw new Exception(exception.Message);
             }
         }
+        #endregion
 
         /// <summary>
         /// Business layer login for GetConversionbyId Method
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
+        #region GetConversionbyId
         public Response<ConversionModel> GetConversionbyId(int Id)
         {
             try
@@ -106,12 +124,14 @@ namespace BusinessLayer.Services
                 throw new Exception(exception.Message);
             }
         }
+        #endregion
 
         /// <summary>
         /// business layer login for DeleteConversionbyId Method
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
+        #region DeleteConversionById
         public Response<ConversionModel> DeleteConversionById(int Id)
         {
             try
@@ -136,12 +156,14 @@ namespace BusinessLayer.Services
                 throw new Exception(exception.Message);
             }
         }
+        #endregion
 
         /// <summary>
         /// Business layer logic for comparison Method
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
+        #region Comparison
         public Response<ComparisonModel> Comparison(ComparisonModel quantity)
         {
             try
@@ -167,11 +189,13 @@ namespace BusinessLayer.Services
                 throw new Exception(exception.Message);
             }
         }
+        #endregion
 
         /// <summary>
         /// Business layer login for GetAllComparisons Method
         /// </summary>
         /// <returns></returns>
+        #region GetAllComparisons
         public Response<ComparisonModel> GetAllComparisons()
         {
             try
@@ -196,12 +220,14 @@ namespace BusinessLayer.Services
                 throw new Exception(exception.Message);
             }
         }
+        #endregion
 
         /// <summary>
         /// Business layer login for GetComparisonbyId Method
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
+        #region GetComparisonbyId
         public Response<ComparisonModel> GetComparisonbyId(int Id)
         {
             try
@@ -227,12 +253,14 @@ namespace BusinessLayer.Services
                 throw new Exception(exception.Message);
             }
         }
+        #endregion
 
         /// <summary>
         /// business layer login for DeleteConversionbyId Method
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
+        #region DeleteComparisonById
         public Response<ComparisonModel> DeleteComparisonById(int Id)
         {
             try
@@ -257,5 +285,6 @@ namespace BusinessLayer.Services
                 throw new Exception(exception.Message);
             }
         }
+        #endregion
     }
 }

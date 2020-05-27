@@ -1,10 +1,17 @@
-﻿using CommonLayer.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/// ================================================
+/// File    : IQuantityMeasurementBL.cs
+/// Author  : Saksham Singh
+/// Company : Bridgelabz Solution LLP
+/// ================================================
+using CommonLayer.Model;
 
+#region BusinessLayer.Interface
 namespace BusinessLayer.Interface
 {
+    /// <summary>
+    /// Interface for business layer
+    /// </summary>
+    #region IQuantityMeasurementBL
     public interface IQuantityMeasurementBL
     {
         Response<ConversionModel> Conversion(ConversionModel quantity);
@@ -17,4 +24,6 @@ namespace BusinessLayer.Interface
         Response<ComparisonModel> GetComparisonbyId(int Id);
         Response<ComparisonModel> DeleteComparisonById(int Id);
     }
+    #endregion
 }
+#endregion

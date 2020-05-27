@@ -1,8 +1,15 @@
-﻿namespace CommonLayer.Model
+﻿/// ================================================
+/// File    : Unit.cs
+/// Author  : Saksham Singh
+/// Company : Bridgelabz Solution LLP
+/// ================================================
+#region CommonLayer.Model
+namespace CommonLayer.Model
 {
     /// <summary>
-    /// Enum For Units.
+    /// Enumeration For Units.
     /// </summary>
+    #region Unit
     public enum Unit
     { 
         Inch=1, Feet, Yard,
@@ -10,4 +17,6 @@
         Ml, Litre,
         C, F
     }
+    #endregion
 }
+#endregion
